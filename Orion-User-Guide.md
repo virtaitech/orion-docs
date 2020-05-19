@@ -111,6 +111,26 @@ Orion Controller包括物理GPU管理，vGPU资源分配，GUI监控，管理功
 ### 环境依赖
 * Docker容器环境
 
+### 激活文件下载
+用户在部署Orion Controller之前，需确保已经下载激活文件。
+
+如何下载激活文件：
+
+进入[趋动科技官网](https://www.virtaitech.com), 注册并登录
+
+进入[产品页面](https://www.virtaitech.com/product/index?pos=purchase)点击“申请试用”按钮成为试用用户，或者点击“申请购买”按钮付费购买产品，并等待管理员审核。
+
+经管理员审核后，成功申请试用，或者已经付费购买的用户，可以进入您的个人中心页面，点击“下载激活文件”按钮获取您的激活文件。对于联网环境和非联网环境的用户，需要下载激活文件的方式有所不同，详情请参考“下载激活文件”页面描述。
+
+![download-activation-file](pic/download-activation-file.png)
+
+进入/root/orion/controller目录
+```
+cd /root/orion/controller
+```
+
+用您下载到的激活文件license.txt替换/root/orion/controller目录里的已有的license.txt即可。
+
 ### 启动Orion Controller服务
 
 执行如下命令导入容器镜像，并运行服务
