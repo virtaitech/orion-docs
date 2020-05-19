@@ -99,8 +99,8 @@ Orion vGPU软件是一个为云或者数据中心内的AI应用，CUDA应用提�
 执行如下命令导入容器镜像，并运行服务
 ```
 cd /root/orion/gpu-monitor
-docker load < dcgm-exporter.tar
-docker load < node-exporter.tar
+gunzip dcgm-exporter.tar.gz | docker load
+gunzip node-exporter.tar.gz | docker load
 ./run-nvidia-exportor.sh
 ```
 
@@ -116,8 +116,8 @@ Orion Controller包括物理GPU管理，vGPU资源分配，GUI监控，管理功
 执行如下命令导入容器镜像，并运行服务
 ```
 cd /root/orion/controller
-docker load < orion-controller.tar
-docker load < prometheus.tar
+gunzip orion-controller-ent-2.2.tar.gz | docker load
+gunzip prometheus.tar.gz | docker load
 ```
 编辑配置文件 /root/orion/controller/prometheus.yml
 修改static_configs中的targets 列表，该列表是安装了GPU Monitor服务的GPU服务器的列表。当GPU Monitor有多个IP网段地址的时候，该地址应该与 第3章节部署Orion Server时绑定的数据网段相同，例如文档中的“ORION_BIND_ADDR=CCCC”地址，或者是Orion Server的配置文件中的bind_addr相同。  
